@@ -1,0 +1,7 @@
+class Solution:
+    def reverseBits(self, n: int) -> int:
+        p=0
+        for i in range(32):
+            p=(p<<1)+(n&1)
+            n>>=1
+        return p
