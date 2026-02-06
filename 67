@@ -1,0 +1,21 @@
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        p,q=0,0
+        s,r=0,0
+        for i in a[::-1]:
+            s+=int(i)*2**p
+            p+=1
+        for i in b[::-1]:
+            r+=int(i)*2**q
+            q+=1
+
+        c = s + r
+        if c == 0:
+            return "0"
+
+        d = ""
+        while c!=0:
+            d = str(c % 2) + d
+            c //= 2   
+
+        return d 
